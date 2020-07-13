@@ -26,18 +26,21 @@ android {
                 arguments "-DCMAKE_TOOLCHAIN_FILE=${ndkDir}\\build\\cmake\\android.toolchain.cmake"
                 arguments "-DANDROID_ARM_NEON=TRUE", "-DANDROID_TOOLCHAIN=clang","-DCMAKE_BUILD_TYPE=Release"
 
-                cppFlags "-std=c++11 -fopenmp -O3"
-                cFlags "-fopenmp -O3"
-                abiFilters 'armeabi-v7a'
+                cppFlags "-std=c++11"
+//                cppFlags "-std=c++11 -fopenmp -O3"
+                cppFlags "-std=c++11 -O3"
+//                cFlags "-fopenmp -O3"
+                cFlags "-O3"
+                abiFilters 'armeabi-v7a', 'arm64-v8a'
             }
         }
     }
 
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ['src/main/cpp/jniLibs']
-        }
-    }
+//    sourceSets {
+//        main {
+//            jniLibs.srcDirs = ['src/main/cpp/jniLibs']
+//        }
+//    }
 
     externalNativeBuild {
         cmake {
