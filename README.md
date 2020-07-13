@@ -11,3 +11,5 @@ kevinems:
 1. Android Studio 4.0 上编译通过。
 2. 使用重新编译的 seetaface2 的库，并支持 arm64。（原项目没有提供 arm64 库，所以在目前的主流手机上都跑不了）
 3. demo 修改为使用后置摄像头。
+
+有问题可以到这里找我 www.kevinems.com
