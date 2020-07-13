@@ -16,21 +16,37 @@ add_library(libopencv_java3 SHARED IMPORTED )
 set_target_properties(libopencv_java3 PROPERTIES
         IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libopencv_java3.so")
 
-add_library(libseetanet2 SHARED IMPORTED )
-set_target_properties(libseetanet2 PROPERTIES
-        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libseetanet2.so")
+#add_library(libseetanet2 SHARED IMPORTED )
+#set_target_properties(libseetanet2 PROPERTIES
+#        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libseetanet2.so")
 
-add_library(libfd SHARED IMPORTED )
-set_target_properties(libfd PROPERTIES
-        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceDetector2.so")
+add_library(libSeetaNet SHARED IMPORTED )
+set_target_properties(libSeetaNet PROPERTIES
+        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaNet.so")
 
-add_library(libfl SHARED IMPORTED )
-set_target_properties(libfl PROPERTIES
-        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceLandmarker2.so")
+#add_library(libfd SHARED IMPORTED )
+#set_target_properties(libfd PROPERTIES
+#        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceDetector2.so")
 
-add_library(libfr SHARED IMPORTED )
-set_target_properties(libfr PROPERTIES
-        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceRecognizer2.so")
+add_library(libSeetaFaceDetector SHARED IMPORTED )
+set_target_properties(libSeetaFaceDetector PROPERTIES
+        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceDetector.so")
+
+#add_library(libfl SHARED IMPORTED )
+#set_target_properties(libfl PROPERTIES
+#        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceLandmarker2.so")
+
+add_library(libSeetaFaceLandmarker SHARED IMPORTED )
+set_target_properties(libSeetaFaceLandmarker PROPERTIES
+        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceLandmarker.so")
+
+#add_library(libfr SHARED IMPORTED )
+#set_target_properties(libfr PROPERTIES
+#        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceRecognizer2.so")
+
+add_library(libSeetaFaceRecognizer SHARED IMPORTED )
+set_target_properties(libSeetaFaceRecognizer PROPERTIES
+        IMPORTED_LOCATION "${libs}/${ANDROID_ABI}/libSeetaFaceRecognizer.so")
 
 find_library( # Sets the name of the path variable.
         jnigraphics-lib
@@ -58,9 +74,12 @@ add_library( # Sets the name of the library.
 target_link_libraries( # Specifies the target library.
         facedetect android
         libopencv_java3
-        libseetanet2
-        libfd
-        libfl
+#        libseetanet2
+        libSeetaNet
+#        libfd
+        libSeetaFaceDetector
+#        libfl
+        libSeetaFaceLandmarker
         # Links the target library to the log library
         # included in the NDK.
         ${log-lib})
@@ -78,8 +97,12 @@ add_library( # Sets the name of the library.
 target_link_libraries( # Specifies the target library.
         facerecognize android
         libopencv_java3
-        libseetanet2
-        libfd
-        libfl
-        libfr
+#        libseetanet2
+        libSeetaNet
+#        libfd
+        libSeetaFaceDetector
+#        libfl
+        libSeetaFaceLandmarker
+#        libfr
+        libSeetaFaceRecognizer
         ${log-lib})
