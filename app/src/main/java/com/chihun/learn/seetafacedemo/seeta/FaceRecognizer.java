@@ -54,7 +54,8 @@ public class FaceRecognizer {
     }
 
     public void loadEngine() {
-        loadEngine(getPath("fd_2_00.dat"), getPath("pd_2_00_pts5.dat"), getPath("fr_2_10.dat"));
+//        loadEngine(getPath("fd_2_00.dat"), getPath("pd_2_00_pts5.dat"), getPath("fr_2_10.dat"));
+        loadEngine(getPath("fd_2_00.dat"), getPath("pd_2_00_pts81.dat"), getPath("fr_2_10.dat"));
     }
 
     public void registerFace() {
@@ -98,6 +99,7 @@ public class FaceRecognizer {
                 return outFile.getAbsolutePath();
             } catch (IOException ex) {
                 Log.i(TAG, "Failed to upload a file");
+                ex.printStackTrace();
             } finally {
                 if (null != inputStream) {
                     try {

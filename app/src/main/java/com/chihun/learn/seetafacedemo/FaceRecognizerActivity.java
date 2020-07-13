@@ -70,6 +70,7 @@ public class FaceRecognizerActivity extends AppCompatActivity {
         cameraBridgeViewBase.setCvCameraViewListener(mCvCameraViewListener2);
 
         //在这里设置图像的大小，在手机中图像需要横屏状态，图片太大的话会卡顿
+        cameraBridgeViewBase.setCameraIndex(0); // set up rear camera
         cameraBridgeViewBase.setMaxFrameSize(640, 480);
 
         cameraBridgeViewBase.setOnLongClickListener(new View.OnLongClickListener() {

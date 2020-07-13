@@ -67,7 +67,7 @@ public class FaceDetectorActivity extends AppCompatActivity {
         cameraBridgeViewBase = (CameraBridgeViewBase) findViewById(R.id.CameraView);
         cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
         cameraBridgeViewBase.setCvCameraViewListener(mCvCameraViewListener2);
-
+        cameraBridgeViewBase.setCameraIndex(0); // set up rear camera
         //在这里设置图像的大小，在手机中图像需要横屏状态，图片太大的话会卡顿
         cameraBridgeViewBase.setMaxFrameSize(640, 480);
 

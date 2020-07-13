@@ -50,7 +50,8 @@ public class FaceDetector {
             Log.w(TAG, "please call initial first!");
             return;
         }
-        loadEngine(getPath("fd_2_00.dat", mContext), getPath("pd_2_00_pts81.dat", mContext));
+//        loadEngine(getPath("fd_2_00.dat", mContext), getPath("pd_2_00_pts5.dat", mContext));  // 5 feature points
+        loadEngine(getPath("fd_2_00.dat", mContext), getPath("pd_2_00_pts81.dat", mContext));   // 81 feature points
     }
 
     /**
